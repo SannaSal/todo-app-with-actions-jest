@@ -2,7 +2,15 @@ import './App.css';
 import { useState } from "react";
 
 const App = () => {
+  const [todos, setTodos] = useState([]);
   const [todo, setTodo] = useState("");
+
+  const addTodo = () => {
+    if (todo !== "") {
+      setTodos([...todos, todo]);
+      setTodo("");
+    }
+  };
 
   return (
     <div className="App">
@@ -19,6 +27,9 @@ const App = () => {
           }}
         />
         <button className='add-button'>Add</button>
+        <button className="add-button" onClick={addTodo}>
+          Add
+        </button>
       </div>
     </div>
   );
