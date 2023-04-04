@@ -1,7 +1,6 @@
 const TodoInput = ({ todo, setTodo, addTodo }) => {
   return (
     <div className="input-wrapper">
-        <input type="text" name="todo" placeholder="Create a new todo" />
         <input
           type="text"
           name="todo"

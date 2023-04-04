@@ -25,12 +25,9 @@ const App = () => {
     <div className="App">
       <h1>React Todo App</h1>
       <TodoInput todo={todo} setTodo={setTodo} addTodo={addTodo} />
-      <TodoList list={todos} remmove={deleteTodo} />
+      <TodoList list={todos} remove={deleteTodo} />
     </div>
   );
 };
       
-
-      
-
 export default App;
