@@ -1,5 +1,7 @@
-import './App.css';
 import { useState } from "react";
+import TodoInput from "./TodoInput";
+import TodoList from "./TodoList";
+import './App.css';
 
 const App = () => {
   const [todos, setTodos] = useState([]);
@@ -22,47 +24,13 @@ const App = () => {
   return (
     <div className="App">
       <h1>React Todo App</h1>
-      <div className="input-wrapper">
-        <input type="text" name="todo" placeholder="Create a new todo" />
-        <input
-          type="text"
-          name="todo"
-          value={todo}
-          placeholder="Create a new todo"
-          onChange={(e) => {
-            setTodo(e.target.value);
-          }}
-        />
-        <button className='add-button'>Add</button>
-        <button className="add-button" onClick={addTodo}>
-          Add
-        </button>
-      </div>
-
-      {todos?.length > 0 ? (
-        <ul className="todo-list">
-          {todos.map((todo, index) => (
-            <div className="todo">
-              <li key={index}> {todo} </li>
-
-              <button
-                className="delete-button"
-                onClick={() => {
-                  deleteTodo(todo);
-                }}
-              >
-                Delete
-              </button>
-            </div>
-          ))}
-        </ul>
-      ) : (
-        <div className="empty">
-          <p>No task found</p>
-        </div>
-      )}
+      <TodoInput todo={todo} setTodo={setTodo} addTodo={addTodo} />
+      <TodoList list={todos} remmove={deleteTodo} />
     </div>
   );
-}
+};
+      
+
+      
 
 export default App;
